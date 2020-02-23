@@ -52,6 +52,7 @@ func fillBySettingS(st interface{},settings map[string]interface{}) error  {
     ok bool
   )
 
+
   for k,v :=range settings {
     if field,ok =(reflect.ValueOf(st)).Elem().Type().FieldByName(k);!ok{
       continue
@@ -67,12 +68,22 @@ func fillBySettingS(st interface{},settings map[string]interface{}) error  {
 
 }
 
+
+type child struct {
+  eating string
+  weight float64
+}
+
 func TestFillNameAndAge(t *testing.T)  {
   settings :=map[string]interface{}{"Name":"wuqinqiang","Age":30}
   employ :=Employee{}
   if err :=fillBySettingS(&employ,settings);err !=nil{
     t.Fatal(err)
   }
+
+
+
+
   fmt.Println(employ)
 
 }
