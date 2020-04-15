@@ -8,6 +8,7 @@ import(
 func TestArrayInit(t *testing.T)  {
   var arr [3]int
 
+
   arr[0]=1;
   fmt.Println(arr[0],arr[1])
    arr1:=[5]int{1,2,3,4,5}
